@@ -3,7 +3,7 @@ version: '3'
 services:
 
   php:
-    image: phppdo:latest
+    image: rania1993/php:latest
     container_name: "site_web2"
     ports:
       - 8082:80
