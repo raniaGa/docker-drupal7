@@ -20,7 +20,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: ins
+      MYSQL_DATABASE: raniasite
     ports: 
       - 3360:3306
   phpmyadmin:
