@@ -4,9 +4,9 @@ services:
 
   php:
     image: rania1993/php:latest
-    container_name: "site_web2"
+    container_name: "deptest_web"
     ports:
-      - 8082:80
+      - 8084:80
     restart: always
     volumes:
       - ./raniasite:/var/www/html/
@@ -14,22 +14,22 @@ services:
       - db
   db:
     image: mysql:5.5
-    container_name: "site_mysql"
+    container_name: "deptest_mysql"
     volumes:
       - ./dbsql:/home
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: raniasite
+      MYSQL_DATABASE: deptest
     ports: 
-      - 3360:3306
+      - 3362:3306
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: "site_pma"
     depends_on:
       - db
     ports:   
-      - 8083:80
+      - 8085:80
     restart: always
     environment:
       - PMA_HOST=db
