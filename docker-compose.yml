@@ -6,7 +6,7 @@ services:
     image: rania1993/php:latest
     container_name: "deptest_web"
     ports:
-      - 8084:80
+      - 8087:80
     restart: always
     volumes:
       - ./raniasite:/var/www/html/
