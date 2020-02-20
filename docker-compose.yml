@@ -16,7 +16,7 @@ services:
     image: mysql:5.5
     container_name: "deptest_mysql"
     volumes:
-      - ./dbsql:docker-entrypoint-initdb.d/raniasite.sql
+      - ./dbsql:docker-entrypoint-initdb.d:rw
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -25,7 +25,7 @@ services:
       - 3362:3306
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: "site_pma"
+    container_name: "deptest_pma"
     depends_on:
       - db
     ports:   
