@@ -3,7 +3,7 @@ version: '3'
 services:
 
   php:
-    image: rania1993/php
+    build: .
     container_name: "deptest_web"
     ports:
       - 8087:80
