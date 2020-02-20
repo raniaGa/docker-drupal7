@@ -16,7 +16,7 @@ services:
     image: mysql:5.5
     container_name: "deptest_mysql"
     volumes:
-      - ./dbsql:/home
+      - ./dbsql/raniasite.sql:docker-entrypoint-initdb.d/raniasite.sql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
