@@ -3,7 +3,7 @@ version: '3'
 services:
 
   php:
-    build: .
+    image: phppdo:latest
     container_name: "deptest_web"
     ports:
       - 8087:80
@@ -16,7 +16,7 @@ services:
     image: mysql:5.5
     container_name: "deptest_mysql"
     volumes:
-      - ./dbsql:docker-entrypoint-initdb.d:rw
+      - ./dbsql:/home
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
