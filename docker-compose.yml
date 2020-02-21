@@ -21,6 +21,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: deptest
+    command: /bin/sh -c "mysql -uroot -proot deptest < /home/raniasite.sql"
     ports: 
       - 3362:3306
   phpmyadmin:
