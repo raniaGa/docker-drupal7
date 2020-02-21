@@ -15,12 +15,12 @@ services:
   db:
     image: mysql:5.5
     container_name: "deptest_mysql"
-    volumes:
-      - ./dbsql:/docker-entrypoint-initdb.d:ro
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: deptest
+    volumes:
+      - ./dbsql:/docker-entrypoint-initdb.d:ro
     ports: 
       - 3362:3306
   phpmyadmin:
